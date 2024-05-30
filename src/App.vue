@@ -6,7 +6,7 @@
   <main>
     <div class="container">
       <!-- 標題 title -->
-      <h1>歡迎使用 Feng 待辦事項！</h1>
+      <h1>Vue To-Do List</h1>
       <!-- 輸入框和按鈕 -->
       <div class="input-add">
         <input type="text" name="todo" />
@@ -28,7 +28,7 @@
           <!-- 用 label 包裹，點擊任何一個元素都能觸發 checkbox，進而更改 css -->
           <label>
             <input type="checkbox" />
-            Todo 1
+            Coding
             <!-- 自定義的複選按鈕 -->
             <span class="check-button"></span>
           </label>
@@ -36,14 +36,14 @@
         <div class="todo-item">
           <label>
             <input type="checkbox" />
-            Todo 2
+            Reading
             <span class="check-button"></span>
           </label>
         </div>
         <div class="todo-item">
           <label>
             <input type="checkbox" />
-            Todo 3
+            吃飯
             <span class="check-button"></span>
           </label>
         </div>
@@ -82,6 +82,7 @@ main {
 /* 標題 */
 h1 {
   margin: 24px 0;
+  margin-top: -10px;
   font-size: 28px;
   font-weight: bolder;
   color: #ecf0f1;
@@ -132,17 +133,17 @@ h1 {
 .filters {
   display: flex;
   margin: 24px 3px;
-  color: #bdc3c7;
+  color: #ecf0f1;
   font-size: 14px;
 }
 
 .filters .filter {
-  margin-right: 14px;
+  margin-right: 24px;
   transition: 0.8s;
 }
 
 .filters .filter.active {
-  color: #61b5ee;
+  color: #32a8f6;
   transform: scale(1.2);
   font-weight: bolder;
 }
@@ -167,7 +168,7 @@ h1 {
 
 .todo-item label span.check-button {
   position: absolute;
-  top: 0;
+  top: 2.5px;
 }
 
 .todo-item label span.check-button::before,
@@ -175,22 +176,23 @@ h1 {
   content: "";
   display: block;
   position: absolute;
-  width: 18px;
-  height: 18px;
+  width: 20px;
+  height: 20px;
   border-radius: 50%;
 }
 
 .todo-item label span.check-button::before {
-  border: 1px solid #61b5ee ;
+  border: 1.5px solid #626262;
 }
 
 .todo-item label span.check-button::after {
-  transition: 0.4s;
-  background: #61b5ee ;
-  transform: translate(1px, 1px) scale(0.8);
+  transition: 0.3s;
+  background: #61b5ee;
+  transform: scale(0.7);
   opacity: 0;
 }
 
+/* 原生 input 框隱藏，使用上面偽元素替代 */
 .todo-item input {
   margin-right: 16px;
   opacity: 0;
