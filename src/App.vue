@@ -115,7 +115,6 @@ h1 {
   color: white;
   position: absolute;
   right: 0px;
-
   cursor: pointer;
 }
 
@@ -124,7 +123,7 @@ h1 {
   width: 100%;
   height: 100%;
   background: linear-gradient(#fff, #fff), linear-gradient(#fff, #fff);
-  background-size: 50% 2px, 2px 50%;
+  background-size: 50% 3px, px 50%;
   background-position: center;
   background-repeat: no-repeat;
 }
