@@ -57,7 +57,7 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: Helvetica, "PingFang SC", "Microsoft Yahei", sans-serif;
+  font-family: "Microsoft YaHei", "PingFang SC", "Noto Sans CJK SC", "SimSun", "STSong", "Helvetica", "Arial", sans-serif;
 }
 
 /* 整個頁面 */
@@ -67,7 +67,7 @@ main {
   display: grid;
   align-items: center;
   justify-items: center;
-  background: rgb(203, 210, 240);
+  background: #2c3e50
 }
 
 .container {
@@ -76,14 +76,15 @@ main {
   box-shadow: 0px 0px 24px rgba(0, 0, 0, 0.15);
   border-radius: 24px;
   padding: 48px 28px;
-  background-color: rgb(245, 246, 252);
+  background-color: #34495e
 }
 
 /* 標題 */
 h1 {
   margin: 24px 0;
   font-size: 28px;
-  color: #414873;
+  font-weight: bolder;
+  color: #ecf0f1;
 }
 
 /* 增加欄 */
@@ -108,7 +109,7 @@ h1 {
   width: 60px;
   height: 60px;
   border-radius: 50%;
-  background: linear-gradient(#c0a5f3, #7f95f7);
+  background: linear-gradient(#c0a5f3, #c7564a);
   /* 漸變顏色 */
   border: none;
   /* outline:auto; */
@@ -123,15 +124,15 @@ h1 {
   width: 100%;
   height: 100%;
   background: linear-gradient(#fff, #fff), linear-gradient(#fff, #fff);
-  background-size: 50% 3px, px 50%;
+  background-size: 50% 3px, 3px 50%;
   background-position: center;
   background-repeat: no-repeat;
 }
 
 .filters {
   display: flex;
-  margin: 24px 2px;
-  color: #c0c2ce;
+  margin: 24px 3px;
+  color: #bdc3c7;
   font-size: 14px;
 }
 
@@ -141,8 +142,9 @@ h1 {
 }
 
 .filters .filter.active {
-  color: #6b729c;
+  color: #61b5ee;
   transform: scale(1.2);
+  font-weight: bolder;
 }
 
 .todo-list {
@@ -179,12 +181,12 @@ h1 {
 }
 
 .todo-item label span.check-button::before {
-  border: 1px solid #b382f9;
+  border: 1px solid #61b5ee ;
 }
 
 .todo-item label span.check-button::after {
   transition: 0.4s;
-  background: #b382f9;
+  background: #61b5ee ;
   transform: translate(1px, 1px) scale(0.8);
   opacity: 0;
 }
