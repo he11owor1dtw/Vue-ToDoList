@@ -1,25 +1,11 @@
 <template>
-  <div class="todo-item">
-    <!-- 用 label 包裹，點擊任何一個元素都能觸發 checkbox，進而更改 css -->
+  <div class="todo-item" :class="{ done: todoItem.completed }">
+    <!-- 用 label 包裹整個元素，使得點擊文字或自定義按鈕時都能觸發複選框，進而更改 css -->
     <label>
-      <input type="checkbox" />
-      Coding
-      <!-- 自定義的複選按鈕 -->
-      <span class="check-button"></span>
-    </label>
-  </div>
-  <div class="todo-item">
-    <label>
-      <input type="checkbox" />
-      Reading
-      <span class="check-button"></span>
-    </label>
-  </div>
-  <div class="todo-item">
-    <label>
-      <input type="checkbox" />
-      吃飯
-      <span class="check-button"></span>
+      <input type="checkbox" :checked="todoItem.completed" @click="$emit('change-state', $event)" />
+      <!-- 註冊點擊事件，點擊時觸發 change-state 事件，並把 $event 參數傳遞進去 -->
+      {{ todoItem.content }}
+      <span class="check-button"></span> <!-- 自定義的複選按鈕 -->
     </label>
   </div>
 </template>
@@ -27,6 +13,7 @@
 <script>
 export default {
   name: "TodoListItem",
+  props: ["todoItem"], // 接受從 TodoList.vue 傳遞過來的 todoItem 屬性
 }
 </script>
 
@@ -42,6 +29,12 @@ export default {
   position: relative;
   display: flex;
   align-items: center;
+}
+
+/* 完成時增加斜體跟刪除線 */
+.todo-item.done label {
+  text-decoration: line-through;
+  font-style: italic;
 }
 
 .todo-item label span.check-button {

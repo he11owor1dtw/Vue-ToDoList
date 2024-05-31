@@ -1,4 +1,19 @@
+<template>
+  <main>
+    <div class="container">
+      <!-- 標題 title -->
+      <h1>Vue To-Do List</h1>
+      <todo-add :tid="todos.length" @add-todo="addTodo"></todo-add>
+      <todo-filter></todo-filter>
+      <todo-list :todos="todos">
+        <todo-list-item></todo-list-item>
+      </todo-list>
+    </div>
+  </main>
+</template>
+
 <script>
+import { ref } from 'vue';
 import TodoAdd from './components/TodoAdd.vue';
 import TodoFilter from './components/TodoFilter.vue';
 import TodoList from './components/TodoList.vue';
@@ -6,23 +21,17 @@ import TodoListItem from './components/TodoListItem.vue';
 
 export default {
   name: "App",
-  components: { TodoAdd, TodoFilter, TodoList, TodoListItem }
+  components: { TodoAdd, TodoFilter, TodoList, TodoListItem },
+  setup() {
+    const todos = ref([]);
+    const addTodo = (todo) => todos.value.push(todo);
+    return {
+      todos,
+      addTodo,
+    };
+  },
 }
 </script>
-
-<template>
-  <main>
-    <div class="container">
-      <!-- 標題 title -->
-      <h1>Vue To-Do List</h1>
-      <todo-add></todo-add>
-      <todo-filter></todo-filter>
-      <todo-list>
-        <todo-list-item></todo-list-item>
-      </todo-list>
-    </div>
-  </main>
-</template>
 
 <style scoped>
 * {
