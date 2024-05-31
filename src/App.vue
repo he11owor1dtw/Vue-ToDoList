@@ -17,35 +17,20 @@
 </template>
 
 <script>
-import { ref, computed } from 'vue';
+
 import TodoAdd from './components/TodoAdd.vue';
 import TodoFilter from './components/TodoFilter.vue';
 import TodoList from './components/TodoList.vue';
 import TodoListItem from './components/TodoListItem.vue';
+import useTodos from './composables/useTodos';
+import useFilteredTodos from './composables/useFilteredTodos';
 
 export default {
   name: "App",
   components: { TodoAdd, TodoFilter, TodoList, TodoListItem },
   setup() {
-    const todos = ref([]);
-    const filter = ref("all");
-
-    // filter.value 和 todos.value 都是響應式的數據。
-    // 當其中的任意一個發生變化時，下方計算屬性 filteredTodos 會自動重新計算
-
-    const addTodo = (todo) => todos.value.push(todo);
-
-    const filteredTodos = computed(() => {
-      // 根據 filter.value 的值選擇不同的情況
-      switch (filter.value) {
-        case "done":
-          return todos.value.filter((todo) => todo.completed);
-        case "todo":
-          return todos.value.filter((todo) => !todo.completed);
-        default:
-          return todos.value;
-      }
-    });
+    const { todos, addTodo } = useTodos();
+    const { filter, filteredTodos } = useFilteredTodos(todos);
 
     return {
       todos,
