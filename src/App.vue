@@ -5,9 +5,7 @@
       <h1>Vue To-Do List</h1>
       <todo-add :tid="todos.length" @add-todo="addTodo"></todo-add>
       <todo-filter :selected="filter" @change-filter="filter = $event"></todo-filter>
-      <todo-list :todos="filteredTodos">
-        <todo-list-item></todo-list-item>
-      </todo-list>
+      <todo-list :todos="filteredTodos"></todo-list>
     </div>
   </main>
   <!-- 
@@ -17,17 +15,15 @@
 </template>
 
 <script>
-
 import TodoAdd from './components/TodoAdd.vue';
 import TodoFilter from './components/TodoFilter.vue';
 import TodoList from './components/TodoList.vue';
-import TodoListItem from './components/TodoListItem.vue';
 import useTodos from './composables/useTodos';
 import useFilteredTodos from './composables/useFilteredTodos';
 
 export default {
   name: "App",
-  components: { TodoAdd, TodoFilter, TodoList, TodoListItem },
+  components: { TodoAdd, TodoFilter, TodoList },
   setup() {
     const { todos, addTodo } = useTodos();
     const { filter, filteredTodos } = useFilteredTodos(todos);
