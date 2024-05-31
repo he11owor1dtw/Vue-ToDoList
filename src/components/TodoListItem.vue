@@ -17,7 +17,7 @@ export default {
 }
 </script>
 
-<style scoped>
+<style>
 .todo-item {
   background: white;
   padding: 16px;
@@ -39,7 +39,7 @@ export default {
 
 .todo-item label span.check-button {
   position: absolute;
-  top: 2.5px;
+  top: 0;
 }
 
 .todo-item label span.check-button::before,
@@ -59,7 +59,7 @@ export default {
 .todo-item label span.check-button::after {
   transition: 0.3s;
   background: #61b5ee;
-  transform: scale(0.7);
+  transform: translate(1.5px, 1.5px) scale(0.8);
   opacity: 0;
 }
 

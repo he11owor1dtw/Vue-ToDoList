@@ -16,6 +16,7 @@ export default function useFilteredTodos(todos) {
         return todos.value;
     }
   });
+  
   return {
     filter,
     filteredTodos,

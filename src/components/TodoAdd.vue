@@ -46,7 +46,7 @@ export default {
 };
 </script>
 
-<style scoped>
+<style>
 /* 增加欄 */
 .input-add {
   position: relative;

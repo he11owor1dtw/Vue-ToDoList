@@ -4,10 +4,10 @@
     <span class="filter" 
     v-for="filter in filters" 
     :key="filter.value" 
-    @click="$emit('change-filter', filter.value)">
-      <span :class="{ active: selected === filter.value }">
+    @click="$emit('change-filter', filter.value)"
+    :class="{ active: selected === filter.value }">
         {{ filter.label }}
-      </span>
+      
     </span>
   </div>
   <!--  
@@ -41,23 +41,23 @@ export default {
 };
 </script>
 
-<style scoped>
+<style>
 .filters {
   display: flex;
   margin: 24px 3px;
   color: #ecf0f1;
   font-size: 14px;
+  cursor: pointer;
 }
 
 .filters .filter {
-  margin-right: 24px;
-  transition: 0.8s;
-  cursor: pointer;
+  margin-right: 20px;
+  transition: 0.3s;
 }
 
 .filters .filter.active {
   color: #32a8f6;
-  transform: scale(1.2);
+  transform: scale(1.3);
   font-weight: bolder;
 }
 </style>

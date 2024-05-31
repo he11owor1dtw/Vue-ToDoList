@@ -25,7 +25,7 @@ export default {
 }
 </script>
 
-<style scoped>
+<style>
 .todo-list {
   display: grid;
   row-gap: 14px;

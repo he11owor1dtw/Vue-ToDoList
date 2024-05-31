@@ -38,7 +38,7 @@ export default {
 }
 </script>
 
-<style scoped>
+<style>
 * {
   box-sizing: border-box;
   margin: 0;
@@ -53,7 +53,7 @@ main {
   display: grid;
   align-items: center;
   justify-items: center;
-  background: #2c3e50
+  background: #2c3e50;
 }
 
 .container {
@@ -62,7 +62,7 @@ main {
   box-shadow: 0px 0px 24px rgba(0, 0, 0, 0.15);
   border-radius: 24px;
   padding: 48px 28px;
-  background-color: #34495e
+  background-color: #34495e;
 }
 
 /* 標題 */
